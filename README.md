@@ -9,8 +9,9 @@ pip install django
 ~~~
 
 # SuperUser
-~~~
 En /admin
+
 user: test
+
 password: admin
-~~~
+
