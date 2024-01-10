@@ -1,0 +1,21 @@
+
+{% extends 'base.html' %}
+
+{% block content %}  
+<div class="son">
+    <h2>Eliminar perfil</h2>
+
+    <div class="profile">
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" name="newName" value="{{ user.username }}" placeholder="Usuario" minlength="5" disabled>
+            <input type="password" name="password1" placeholder="Contraseña" minlength="12" required>
+            <input type="password" name="password2" placeholder="Repetir contraseña" minlength="12" required>
+            <input type="submit" class="deleteProfile" value="Eliminar Perfil">
+            <p class="error">{{ error }}</p>
+        </form>
+
+    </div>
+
+</div>
+{% endblock %}

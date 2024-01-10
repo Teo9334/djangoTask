@@ -1,0 +1,46 @@
+
+{% extends 'base.html' %}
+
+{% block content %}  
+<div class="son">
+    <h2>Añadir Tarea</h2>
+
+    <div class="add-tarea">
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" placeholder="Título" name="title" required maxlength="12" minlength="2">
+            <textarea name="texto" id="" cols="30" rows="10" placeholder="Descripción" required></textarea>
+
+            <hr>
+
+            <div class="date-add">
+                <label for=""><i class="fa-solid fa-stopwatch"></i> Completar para </label>
+                <input type="date" name="endDate" id="endDate" required>
+            </div>
+            
+            <hr>
+            
+            <div class="checkbox">
+                <input type="checkbox" name="checkbox" value="1">
+                <label for="">Completado</label>
+            </div>
+            
+            <input type="submit" value="Crear tarea">
+
+        </form>
+    </div>
+
+</div>
+
+<script>
+    // Obtener el campo de fecha
+    var endDateField = document.getElementById('endDate');
+
+    // Obtener la fecha actual en formato ISO (AAAA-MM-DD)
+    var fechaActual = new Date().toISOString().split('T')[0];
+
+    // Establecer el atributo min del campo de fecha a la fecha actual
+    endDateField.setAttribute('min', fechaActual);
+</script>
+
+{% endblock %}

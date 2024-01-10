@@ -1,0 +1,47 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrarme</title>
+    <link rel="stylesheet" href="{% static "login.css" %}">
+
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/e3defecb28.js" crossorigin="anonymous"></script>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="container">
+        <form method="POST">
+            <h2>Registrarme</h2>
+            {% csrf_token %}
+            
+            <div class="data-container">
+                <span><i class="fa-solid fa-user"></i><input type="text" name="user" class="input-data" placeholder="Usuario" required minlength="5"></span>
+                <span><i class="fa-solid fa-lock"></i><input type="password" name="password1" class="input-data" placeholder="Contraseña" required minlength="12"></span>  
+                <span><i class="fa-solid fa-lock"></i><input type="password" name="password2" class="input-data" placeholder="Repetir contraseña" required minlength="12"></span> 
+            </div>
+            
+            <p class="error">{{ error }}</p>
+
+            <input type="submit" class="btn" value="Registrarme">
+
+            <div class="account">   
+                <p>¿Ya tienes una cuenta?</p>
+                <a href="/login">Iniciar Sesión</a>
+            </div>
+            
+        </form>
+    </div>
+
+</body>
+</html>

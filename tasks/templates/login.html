@@ -1,0 +1,49 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <link rel="stylesheet" href="{% static "login.css" %}">
+
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/e3defecb28.js" crossorigin="anonymous"></script>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <div class="container">
+        
+        <form method="POST">
+            {% csrf_token %}
+            <h2>Iniciar Sesión</h2>
+            
+            <div class="data-container">
+                <span><i class="fa-solid fa-user"></i><input type="text" name="user" class="input-data" placeholder="Usuario" required></span>
+                <span><i class="fa-solid fa-lock"></i><input type="password" name="password" class="input-data" placeholder="Contraseña" required></span>  
+            </div>
+            
+            <p class="error">{{ error }}</p>
+
+            <input type="submit" class="btn" value="Iniciar">
+            
+            <div class="account">   
+                <p>¿No tienes cuenta?</p>
+                <a href="/register">Registrarme</a>
+            </div>
+
+            
+            
+        </form>
+    </div>
+
+</body>
+</html>

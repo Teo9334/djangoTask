@@ -1,0 +1,28 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="son">
+    <h2>Ver Tarea</h2>
+
+    <div class="ver-tarea">
+        <h2>{{ task.title }}</h2>
+        <p class="ver-description">{{ task.description }}</p>
+        <p class="ver-date"><i class="fa-solid fa-flag"></i> {{ task.startDate }}</p>
+        <p class="ver-date"><i class="fa-solid fa-stopwatch"></i> {{ task.endDate }}</p>
+        
+        <div>
+            {% if task.complete %}
+                <a href="{% url 'taskComplete' id=task.id %}" class="complete-task task-completada"><i class="fa-solid fa-check"></i> Completada</a>
+            {% else %}
+                <a href="{% url 'taskComplete' id=task.id %}" class="complete-task"><i class="fa-solid fa-check"></i> Completar tarea</a> 
+            {% endif %}
+            <a href="{% url 'editTask' id=task.id %}" class="edit-task"><i class="fa-solid fa-pen"></i> Editar</a>
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

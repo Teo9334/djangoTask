@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="son">
+    <h2>Tareas</h2>
+
+    <div class="container-card">
+        <div class="card-add">
+            <a href="/add_task"><i class="fa-solid fa-plus"></i></a>
+        </div>
+
+        {% for task in tasks %}
+        {% if task.complete %}
+            <div class="card">
+                <div class="title-card">
+                    <div>
+                        <h4>{{ task.title }}</h4>
+                        {% if task.complete %}
+                        <p><i class="fa-solid fa-check"></i></p>
+                        {% endif %}
+                    </div>
+                    
+                    <p><i class="fa-solid fa-stopwatch"></i> {{ task.endDate }}</p>
+                    
+                </div>
+                
+                <p class="description">{{ task.description|slice:":100" }} </p>
+                <a href="{% url 'taskView' id=task.id %}">Ver tarea</a>
+            </div>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+
+</div>
+
+{% endblock %}

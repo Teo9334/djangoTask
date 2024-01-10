@@ -1,0 +1,506 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+html{
+    height: 100%;
+}
+
+body{
+    background-color: #0F0F0F;
+    height: 100%;
+}
+/*
+#303030
+#181818
+#008170
+#006154
+#cc4a4a
+*/
+
+.container{
+    display: flex;
+    height: 100%;
+}
+
+.navbar-top{
+    display: flex;
+    border-bottom: 1px solid #303030;
+    align-items: center;
+}
+
+.navbar-top h2{
+    color: #008170;
+    font-size: 25px;
+}
+
+.navbar-top span{
+    color: #d3d3d3;
+}
+
+.flechaIz{
+    color: #d3d3d3;
+}
+
+.navbar-top button{
+    padding: 10px;
+    background-color: transparent;
+    border: none;
+    color: #009b86;
+    font-size: 20px;
+    height: 60px;
+    width: 60px;
+}
+
+.navbar{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    border-right: 1px solid #303030;
+    padding: 10px;
+    height: 100%;
+    top: 0;
+}
+
+.navbar h2{
+    color: #008170;
+    margin-bottom: 30px;
+    font-size: 25px;
+    text-align: center;
+}
+.navbar span{
+    color: #d3d3d3;
+}
+
+.navbar a{
+    color: #d3d3d3;
+    margin: 5px 0px;
+    text-decoration: none;
+    text-align: center;
+    padding: 5px;
+}
+
+.navbar a:hover{
+    background-color: #303030;
+    border-radius: 20px;
+}
+
+.navbar i{
+    margin-right: 5px;
+}
+
+#init{
+    color: #009b86 !important;
+    background-color: #303030;
+    border-radius: 20px;
+}
+
+.son{
+    margin-left: 186px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.son h2{
+    border-bottom: 1px solid #303030;
+    padding: 5px 15px;
+    color: #d3d3d3;
+    font-size: 25px;
+}
+
+/* CONTENEDOR DE CARTAS */
+
+.container-card{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px;
+    height: 100%;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1 1 200px;
+    width: 20%;
+    background-color: #181818;
+    border: 1px solid #303030;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    max-height: 200px;
+    max-width: 250px;
+}
+
+.title-card{
+    display: flex;
+    justify-content: space-between;
+}
+
+.title-card div{
+    display: flex;
+    align-items: center; 
+}
+
+.title-card div p{
+    margin-left: 5px;
+    color: #00c257;
+    font-size: 20px;
+}
+
+.title-card p{
+    color: #7e7e7e;
+    font-size: 14px;
+} 
+
+.title-card h4{
+    display: inline;
+    color: #b3ddd7;
+    background-color: #303030;
+    padding: 5px 20px;
+    border-radius: 20px;
+    font-size: 14px !important;
+    font-weight: bolder;
+}
+
+.description{
+    color: #a8a8a8;
+    padding: 5px;
+}
+
+.card a{
+    text-decoration: none;
+    text-align: center;
+    margin: 5px;
+    background-color: #30ceb6;
+    color: #181818;
+    border: none;
+    padding: 3px 8px;
+    font-size: 15px;
+    font-weight: bolder;
+    cursor: pointer;
+}
+
+.card-add{
+    max-width: 250px;
+    max-height: 200px;
+    flex: 1 1 200px;
+    display: flex;
+    width: 20%;
+    background-color: #181818;
+    border: 1px solid #303030;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    align-items: center;
+}
+
+.card-add a{
+    text-decoration: none;
+    font-size: 70px;
+    margin: 0 auto;
+    color: #b3ddd7;
+}
+
+/* FORM AÑADIR TAREA */
+.add-tarea{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #181818;
+    border: 1px solid #303030;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.add-tarea form{
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+}
+
+.add-tarea form input[type="text"]{
+    padding: 10px;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid #202020;
+    background-color: #0F0F0F;
+    color: #d3d3d3;
+}
+
+.add-tarea form textarea{
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid #202020;
+    background-color: #0F0F0F;
+    color: #d3d3d3;
+}
+
+.add-tarea hr{
+    margin-top: 10px;
+    border: 1px solid #303030;
+}
+
+.add-tarea form p{
+    color: #7e7e7e;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.date-add{
+    margin-top: 10px;
+    color: #7e7e7e;
+    margin-left: 9px;
+}
+
+.checkbox{
+    color: #d3d3d3;
+    margin: 10px 0px;
+}
+
+.add-tarea form input[type="submit"]{
+    border: none;
+    background-color: #30ceb6;
+    font-size: 17px;
+    color: #181818;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px;
+}
+
+/* PERFIL */
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    background-color: #181818;
+    border: 1px solid #303030;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 18px;
+}
+
+.profile p{
+    color: #b6b6b6;
+    margin: 10px 0px;
+    margin-left: 13px;
+}
+
+
+.profile div{
+    margin-left: 13px;
+    color: #b6b6b6;
+}
+
+.profile input{
+    cursor: not-allowed;
+}
+
+.profile a{
+    margin: 10px 0px;
+    margin-left: 13px;
+    text-decoration: none;
+    color: #009b86;
+    width: 150px;
+}
+
+.profile a:hover{
+    text-decoration: underline;
+}
+
+.profile form{
+    display: flex;
+    flex-direction: column;
+    width: 340px;
+    margin: 0 auto;
+}
+
+.profile form input[type="text"]{
+    margin: 5px 0px;
+    padding: 10px;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid #202020;
+    background-color: #0F0F0F;
+    color: #d3d3d3;
+    cursor: text;
+}
+
+.profile form input[type="password"]{
+    margin: 5px 0px;
+    padding: 10px;
+    font-size: 20px;
+    outline: none;
+    border: 1px solid #202020;
+    background-color: #0F0F0F;
+    color: #d3d3d3;
+    cursor: text;
+}
+
+.profile form input[type="submit"]{
+    margin: 5px 0px;
+    padding: 5px;
+    font-size: 17px;
+    font-weight: bold;
+    color: #0F0F0F;
+    background-color: #30ceb6;
+    border: none;
+    cursor: pointer;
+}
+
+.error{
+    color: #d33636 !important;
+    font-weight: bolder !important;
+    margin-left: 0px !important;
+    text-align: center;
+}
+
+.sesion{
+    margin: 10px 0px;
+    margin-left: 0px !important;
+}
+
+.cerrarSesion{
+    color: #d33636 !important;
+}
+
+/* VER TAREA */
+.ver-tarea{
+    display: flex;
+    flex-direction: column;
+    background-color: #181818;
+    border: 1px solid #303030;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    font-size: 18px;
+}
+
+.ver-description{
+    color: #b3ddd7;
+    margin: 10px 0px;
+    margin-left: 15px;
+    width: 90%;
+}
+
+.ver-date{
+    font-size: 16px;
+    color: #7e7e7e;
+    margin-left: 15px;
+}
+
+.ver-tarea div{
+    margin: 20px 0px;
+    margin-left: 15px;
+    font-size: 17px;
+}
+
+.ver-tarea div a{
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.complete-task{
+    color: #00c257;
+    border: 1px solid #00c257;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.complete-task:hover{
+    background-color: #00c257;
+    color: #000000;
+}
+
+.task-completada{
+    background-color: #00c257;
+    color: #000000;
+}
+
+.task-completada:hover{
+    text-decoration: line-through;
+    background-color: #d1422f;
+    border: 1px solid #d1422f;
+}
+
+.edit-task{
+    color: #009b86;
+    border: 1px solid #009b86;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.edit-task:hover{
+    background-color: #009b86;
+    color: #000000;
+    border: 1px solid #009b86;
+}
+
+.edit-tarea{
+    margin-top: 10px;
+}
+
+.delete{
+    background-color: #d33636 !important;
+    padding: 6px;
+    font-weight: bolder;
+    color: #0F0F0F;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.deleteProfile{
+    background-color: #d33636 !important;
+    font-weight: bolder;
+    color: #0F0F0F !important;
+    cursor: pointer;
+    text-decoration: none;
+    margin-left: 0px !important;
+    text-align: center;
+    width: 100% !important;
+    padding: 5px 0px;
+    text-decoration: none;
+}
+
+/* RESPONSIVE */
+@media (max-width : 425px) {
+    .description{
+        font-size: 15px;
+    }
+    
+    .son{
+        margin-left: 0px;
+    }
+    .add-tarea form{
+        width: 340px;
+    }
+    .fixed-navbar{
+        display: none;
+    }
+    .container{
+        flex-direction: column;
+    }
+
+    .navbar{
+        background-color: #111111;
+    }
+} 
+
+@media (min-width : 425px){
+    .navbar-top{
+        display: none;
+    }
+    .responsive-navbar{
+        display: none;
+    }
+}
+

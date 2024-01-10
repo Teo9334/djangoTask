@@ -1,0 +1,122 @@
+
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Django Task</title>
+
+    <link rel="stylesheet" href="{% static "home.css" %}">
+
+    <!-- FONT AWESOME -->
+    <script src="https://kit.fontawesome.com/e3defecb28.js" crossorigin="anonymous"></script>
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    
+    <div class="container">
+
+        <div class="navbar-top">
+            <button onclick="abrirMenu()"><i class="fa-solid fa-bars"></i></button>
+            <h2>Django <span>Task</span></h2>
+        </div>
+
+        <div class="fixed-navbar">
+            <div class="navbar">
+                <h2>Django <span>Task</span></h2>
+
+                {% if ide == "profile" %}
+                <a href="/profile" id="init"><i class="fa-solid fa-user"></i>Perfil</a>
+                {% else %}
+                <a href="/profile"><i class="fa-solid fa-user"></i>Perfil</a>
+                {% endif %}
+
+                {% if ide == "home" %}
+                <a href="/home" id="init"><i class="fa-solid fa-house"></i>Home</a>
+                {% else %}
+                <a href="/home"><i class="fa-solid fa-house"></i>Home</a>
+                {% endif %}
+
+                {% if ide == "añadir" %}
+                <a href="/add_task" id="init"><i class="fa-solid fa-plus"></i>Añadir tarea</a>
+                {% else %}
+                <a href="/add_task"><i class="fa-solid fa-plus"></i>Añadir tarea</a>
+                {% endif %}
+
+                {% if ide == "taskRealizadas" %}
+                    <a href="/taskRealizadas" id="init"><i class="fa-solid fa-check"></i>Tareas realizadas</a>
+                {% else %}
+                    <a href="/taskRealizadas"><i class="fa-solid fa-check"></i>Tareas realizadas</a>
+                {% endif %}
+                
+                {% if ide == "taskPendientes" %}
+                    <a href="/taskPendientes" id="init"><i class="fa-solid fa-check"></i>Tareas pendientes</a>
+                {% else %}
+                    <a href="/taskPendientes"><i class="fa-solid fa-check"></i>Tareas pendientes</a>
+                {% endif %}
+            </div>
+        </div>
+
+        <div class="fixed-navbar responsive-navbar" id="responsive-navbar">
+            <div class="navbar">
+                <i class="fa-solid fa-arrow-left flechaIz" onclick="cerrarMenu()"></i>
+                {% if ide == "profile" %}
+                <a href="/profile" id="init"><i class="fa-solid fa-user"></i>Perfil</a>
+                {% else %}
+                <a href="/profile"><i class="fa-solid fa-user"></i>Perfil</a>
+                {% endif %}
+
+                {% if ide == "home" %}
+                <a href="/home" id="init"><i class="fa-solid fa-house"></i>Home</a>
+                {% else %}
+                <a href="/home"><i class="fa-solid fa-house"></i>Home</a>
+                {% endif %}
+
+                {% if ide == "añadir" %}
+                <a href="/add_task" id="init"><i class="fa-solid fa-plus"></i>Añadir tarea</a>
+                {% else %}
+                <a href="/add_task"><i class="fa-solid fa-plus"></i>Añadir tarea</a>
+                {% endif %}
+
+                {% if ide == "taskRealizadas" %}
+                    <a href="/taskRealizadas" id="init"><i class="fa-solid fa-check"></i>Tareas realizadas</a>
+                {% else %}
+                    <a href="/taskRealizadas"><i class="fa-solid fa-check"></i>Tareas realizadas</a>
+                {% endif %}
+
+                {% if ide == "taskPendientes" %}
+                    <a href="/taskPendientes" id="init"><i class="fa-solid fa-check"></i>Tareas pendientes</a>
+                {% else %}
+                    <a href="/taskPendientes"><i class="fa-solid fa-check"></i>Tareas pendientes</a>
+                {% endif %}
+
+            </div>
+    
+        </div>
+
+        {% block content %}
+        {% endblock %}
+
+    </div>
+
+    <script>
+        const responsive_navbar = document.getElementById("responsive-navbar");
+
+        function cerrarMenu(){
+            responsive_navbar.style.display = "none";
+        }
+
+        function abrirMenu(){
+            responsive_navbar.style.display = "block";
+        }
+    </script>
+
+</body>
+</html>

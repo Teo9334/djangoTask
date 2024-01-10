@@ -1,0 +1,96 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+body{
+    background-color: #0F0F0F;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    margin: 7% auto;
+    padding: 60px 40px;
+    border: 1px solid #303030;
+    background-color: #181818;
+    border-radius: 5px;
+}
+
+form h2{
+    color: #d3d3d3;
+}
+
+.data-container{
+    margin-bottom: 10px;
+}
+
+span{
+    display: flex;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+.input-data{
+    outline: none;
+    background-color: transparent;
+    border: none;
+    padding: 5px 10px;
+    border-bottom: 2px solid #303030;
+    font-size: 20px;
+    font-weight: lighter;
+    color: #d3d3d3;
+}
+
+.input-data:required:valid{
+    border-bottom: 2px solid #008170;
+}
+
+.input-data::placeholder{
+    font-size: 17px;
+}
+
+i{
+    color: #d3d3d3;
+    margin-right: 5px;
+    margin-top: 5px;
+    font-size: 17px;
+}
+
+.btn{
+    background-color: #008170;
+    color: #d3d3d3;
+    border: none;
+    padding: 7px;
+    font-size: 19px;
+    cursor: pointer;
+}
+
+.btn:hover{
+    background-color: #006154;
+}
+
+.account{
+    margin-top: 10px;
+}
+
+.account p{
+    color: #d3d3d3;
+}
+
+.account a{
+    color: #008170;
+}
+
+.error{
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bolder;
+    color: #cc4a4a;
+}

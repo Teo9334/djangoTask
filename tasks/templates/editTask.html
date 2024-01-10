@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+
+{% block content %}  
+<div class="son">
+    <h2>Editar Tarea</h2>
+
+    <div class="add-tarea">
+        <form method="POST">
+            {% csrf_token %}
+            <input type="text" placeholder="Título" name="title" required maxlength="12" minlength="2" value="{{ task.title }}">
+            <textarea name="texto" id="" cols="30" rows="10" placeholder="Descripción" required>{{ task.description }}</textarea>
+
+            <hr>
+
+            <div class="date-add">
+                <label for=""><i class="fa-solid fa-stopwatch"></i> Completar para </label>
+                <input type="date" value="{{ task.endDate|date:'Y-m-d' }}" name="endDate" id="endDate" required>
+            </div>
+            
+            <hr>
+            
+            <div class="edit-tarea">
+                <input type="submit" value="Guardar tarea">
+                <a type="submit" class="delete" href="{% url 'deleteTask' id=task.id %}">Eliminar</a>
+            </div>
+            
+
+        </form>
+    </div>
+
+</div>
+
+<script>
+    // Obtener el campo de fecha
+    var endDateField = document.getElementById('endDate');
+
+    // Obtener la fecha actual en formato ISO (AAAA-MM-DD)
+    var fechaActual = new Date().toISOString().split('T')[0];
+
+    // Establecer el atributo min del campo de fecha a la fecha actual
+    endDateField.setAttribute('min', fechaActual);
+</script>
+
+{% endblock %}

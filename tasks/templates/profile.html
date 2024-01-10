@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}  
+        
+<div class="son">
+    <h2>Perfil</h2>
+
+    <div class="profile">
+        <h2>{{ user.username }}</h2>
+        <p>Fecha de registro: {{ user.date_joined }}</p>
+
+        <div>
+            <label for="">Contraseña: </label>
+            <input type="password" value="contraseña" disabled>
+        </div>
+        
+        <div class="sesion">
+            <a href="{% url 'editProfile' id=user.id %}">Editar Perfil</a>
+            <a class="cerrarSesion" href="/logout_user">Cerrar sesión</a>
+        </div>
+        
+    </div>
+
+</div>
+
+{% endblock %}
